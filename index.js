@@ -36,7 +36,7 @@ app.get('/api/server3/get', async (req, res) => {
   }
 });
 
-app.post('/api/server1/send', async (req, res) => {
+app.get('/api/server1/send', async (req, res) => {
   const message = url.parse(req.url, true).query.text;
   try {
     if (message) {
@@ -51,7 +51,7 @@ app.post('/api/server1/send', async (req, res) => {
   }
 });
 
-app.post('/api/server2/send', async (req, res) => {
+app.get('/api/server2/send', async (req, res) => {
   const message = url.parse(req.url, true).query.text;
   try {
     if (message) {
@@ -66,7 +66,7 @@ app.post('/api/server2/send', async (req, res) => {
   }
 });
 
-app.post('/api/server3/send', async (req, res) => {
+app.get('/api/server3/send', async (req, res) => {
   const message = url.parse(req.url, true).query.text;
   try {
     if (message) {
