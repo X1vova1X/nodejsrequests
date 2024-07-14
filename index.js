@@ -5,7 +5,7 @@ const app = express();
 const port = 3000;
 
 app.get('/', (req, res) => {
-  res.sendFile('public/api.html', { root: __dirname });
+  res.sendFile('../public/api.html', { root: __dirname });
 });
 
 app.get('/api/server3/send', async (req, res) => {
