@@ -5,7 +5,16 @@ const app = express();
 const port = 3000;
 
 app.get('/', (req, res) => {
-  res.sendFile('public/api.html', { root: __dirname });
+  res.send("<h1>CloudyChat API</h1>");
+  res.send("<h2>Getting messages</h2>");
+  res.send("<p>Server 1: GET https://cloudychat.vercel.app/api/server1/get</p>");
+  res.send("<p>Server 2: GET https://cloudychat.vercel.app/api/server2/get</p>");
+  res.send("<p>Server 3: GET https://cloudychat.vercel.app/api/server3/get</p>");
+  res.send("<h2>Sending messages</h2>");
+  res.send("<h2>I don't know why I made this a GET request but it's working!</h2>");
+  res.send("<p>Server 1: GET https://cloudychat.vercel.app/api/server1/send?text={any text}</p>");
+  res.send("<p>Server 2: GET https://cloudychat.vercel.app/api/server2/send?text={any text}</p>");
+  res.send("<p>Server 3: GET https://cloudychat.vercel.app/api/server3/send?text={any text}</p>");
 });
 
 app.get('/api/server3/send', async (req, res) => {
