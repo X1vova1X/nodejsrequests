@@ -6,16 +6,24 @@ const port = 3000;
 
 app.get('/', (req, res) => {
   res.send(`
-    <h1>CloudyChat API</h1>
-    <h2>Getting messages</h2>
-    <p>Server 1: GET https://cloudychat.vercel.app/api/server1/get</p>
-    <p>Server 2: GET https://cloudychat.vercel.app/api/server2/get</p>
-    <p>Server 3: GET https://cloudychat.vercel.app/api/server3/get</p>
-    <h2>Sending messages</h2>
-    <h3>I don't know why I made this a GET request but it's working!</h3>
-    <p>Server 1: GET https://cloudychat.vercel.app/api/server1/send?text={any text}</p>
-    <p>Server 2: GET https://cloudychat.vercel.app/api/server2/send?text={any text}</p>
-    <p>Server 3: GET https://cloudychat.vercel.app/api/server3/send?text={any text}</p>
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>CloudyChat Free API</title>
+      </head>
+      <body>
+        <h1>CloudyChat API (Free!)</h1>
+        <h2>Getting messages</h2>
+        <p>Server 1: GET https://cloudychat.vercel.app/api/server1/get</p>
+        <p>Server 2: GET https://cloudychat.vercel.app/api/server2/get</p>
+        <p>Server 3: GET https://cloudychat.vercel.app/api/server3/get</p>
+        <h2>Sending messages</h2>
+        <h2>I don't know why I made this a GET request but it's working!</h2>
+        <p>Server 1: GET https://cloudychat.vercel.app/api/server1/send?text={any text}</p>
+        <p>Server 2: GET https://cloudychat.vercel.app/api/server2/send?text={any text}</p>
+        <p>Server 3: GET https://cloudychat.vercel.app/api/server3/send?text={any text}</p>
+      </body>
+    </html>
   `);
 });
 
