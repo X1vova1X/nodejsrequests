@@ -29,12 +29,8 @@ app.get('/', (req, res) => {
 
 app.get('/api/server1/get', async (req, res) => {
   try {
-    const msg1 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=7&token=46609766713SoreAlpha54188945224').data;
-    const msg2 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=11&token=46609766713SoreAlpha54188945224').data;
-    const msg3 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=12&token=46609766713SoreAlpha54188945224').data;
-    const msg4 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=13&token=46609766713SoreAlpha54188945224').data;
-    const msg5 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=14&token=46609766713SoreAlpha54188945224').data;
-    res.json({"last": msg1, "2nd": msg2, "3rd": msg3, "4th": msg4, "5th": msg5});
+    const response = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=7&token=46609766713SoreAlpha54188945224');
+    res.send(response.data);
   } catch (error) {
     console.error('Error fetching data:', error);
     res.status(500).send('Error fetching data');
@@ -65,14 +61,6 @@ app.post('/api/server1/send', async (req, res) => {
   const message = req.body.text;
   try {
     if (message) {
-      const msgcontent4 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=13&token=46609766713SoreAlpha54188945224')
-      const msgcontent3 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=12&token=46609766713SoreAlpha54188945224')
-      const msgcontent2 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=11&token=46609766713SoreAlpha54188945224')
-      const msgcontent1 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=7&token=46609766713SoreAlpha54188945224')
-      const msg5 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/get/get.php?slot=13&token=46609766713SoreAlpha54188945224', { get_pe: msgcontent4 } )
-      const msg4 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/get/get.php?slot=12&token=46609766713SoreAlpha54188945224', { get_pe: msgcontent3 } )
-      const msg3 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/get/get.php?slot=11&token=46609766713SoreAlpha54188945224', { get_pe: msgcontent2 } )
-      const msg2 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/get/get.php?slot=10&token=46609766713SoreAlpha54188945224', { get_pe: msgcontent1 } )
       const lastmsg = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/get/get.php?slot=6&token=46609766713SoreAlpha54188945224', { get_pe: message });
       res.send("Successfully sent.");
     } else {
