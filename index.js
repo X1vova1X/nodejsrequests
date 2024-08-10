@@ -29,11 +29,11 @@ app.get('/', (req, res) => {
 
 app.get('/api/server1/get', async (req, res) => {
   try {
-    const msg1 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=7&token=46609766713SoreAlpha54188945224');
-    const msg2 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=11&token=46609766713SoreAlpha54188945224');
-    const msg3 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=12&token=46609766713SoreAlpha54188945224');
-    const msg4 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=13&token=46609766713SoreAlpha54188945224');
-    const msg5 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=14&token=46609766713SoreAlpha54188945224');
+    const msg1 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=7&token=46609766713SoreAlpha54188945224').data;
+    const msg2 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=11&token=46609766713SoreAlpha54188945224').data;
+    const msg3 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=12&token=46609766713SoreAlpha54188945224').data;
+    const msg4 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=13&token=46609766713SoreAlpha54188945224').data;
+    const msg5 = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=14&token=46609766713SoreAlpha54188945224').data;
     res.json({"last": msg1, "2nd": msg2, "3rd": msg3, "4th": msg4, "5th": msg5});
   } catch (error) {
     console.error('Error fetching data:', error);
