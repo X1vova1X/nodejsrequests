@@ -56,6 +56,15 @@ app.get('/api/server3/get', async (req, res) => {
     res.status(500).send('Error fetching data. Status: 500 Internal server error.');
   }
 });
+app.get('/api/server4scratch/get', async (req, res) => {
+  try {
+    const response = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=11&token=46609766713SoreAlpha54188945224');
+    res.send(response.data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    res.status(500).send('Error fetching data. Status: 500 Internal server error.');
+  }
+});
 
 app.get('/api/server1/send', async (req, res) => {
   const message = req.query.text;
