@@ -33,7 +33,7 @@ app.get('/api/server1/get', async (req, res) => {
     res.send(response.data);
   } catch (error) {
     console.error('Error fetching data:', error);
-    res.status(500).send('Error fetching data');
+    res.status(500).send('Error fetching data. Status: 500 Internal server error.');
   }
 });
 
@@ -61,7 +61,7 @@ app.post('/api/server1/send', async (req, res) => {
   const message = req.body.text;
   try {
     if (message) {
-      const lastmsg = await axios.get('http://d90930x1.beget.tech/PocketCodeDB/DATABASE/get/get.php?slot=6&token=46609766713SoreAlpha54188945224', { get_pe: message });
+      const lastmsg = await axios.get(`http://d90930x1.beget.tech/PocketCodeDB/DATABASE/get/get.php?slot=6&token=46609766713SoreAlpha54188945224&get_pe=` + String(message));
       res.send("Successfully sent.");
     } else {
       res.status(400).send("Error sending: Empty value.");
